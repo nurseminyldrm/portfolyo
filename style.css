@@ -1,0 +1,248 @@
+/* Genel Ayarlar ve Font Seçimi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth; /* Menüye basınca yumuşak kayma efekti */
+}
+
+body {
+    background-color: #05070f; /* Çok daha derin, gerçek bir gece siyahı */
+    color: #f1f5f9; /* Canlı beyaz yazı */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Arka plandaki neon parlama efekti */
+.bg-glow {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, rgba(157, 78, 221, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navigasyon (Menü) Tasarımı */
+header {
+    background-color: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(12px); /* Arkadaki içeriği buzlu cam yapar */
+    border-bottom: 1px solid rgba(0, 242, 254, 0.2); /* İnce neon alt çizgi */
+    position: fixed; /* Sayfa kaysa da yukarıda sabit kalır */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+nav .logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+nav .logo span {
+    color: #00f2fe; /* Logo sonundaki .dev neon turkuaz */
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* Noktaları kaldırır */
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.6); /* Fareyle üzerine gelince turkuaz olur */
+}
+
+/* Bölüm (Section) Genel Ayarları */
+section.card {
+    padding: 40px;
+    max-width: 900px; /* Görsel gelince biraz genişletmek iyi olur */
+    margin: 40px auto;
+    background: #0d1222; /* Açık gri yerine derin lacivert-gri tonu */
+    border: 1px solid rgba(157, 78, 221, 0.2); 
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, border 0.3s ease;
+
+    /*Menünün başlığı kapatmasını engeller */
+    scroll-margin-top: 90px;
+}
+
+section.card:hover {
+    transform: translateY(-3px);
+    border: 1px solid #00b4d8; /* Daha belirgin turkuaz parlama */
+}
+
+section h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Başlıkların altındaki neon çizgiler */
+section h2::after {
+    background: linear-gradient(90deg, #00b4d8, #9d4edd);
+    box-shadow: 0 0 8px #00b4d8;
+}
+
+/* Ana Sayfa Giriş Alanı */
+/* YENİ HERO ALANI: Yazı ve Görseli Yan Yana Getiriyoruz */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 180px 20px 100px 20px;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left; /* Yazıları sola yaslayarak modern bir hava kattık */
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+/* Turkuaz ve Mor Geçişini Daha Canlı Yaptık */
+.hero h1 span {
+    background: linear-gradient(90deg, #00b4d8 0%, #9d4edd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* Görselin Tarzı ve Animasyonu */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* Görsele hafif neon bir dış gölge veriyoruz */
+    box-shadow: 0 0 25px rgba(0, 180, 216, 0.25); 
+    /* Tatlı bir yukarı-aşağı süzülme efekti */
+    animation: float 4s ease-in-out infinite; 
+}
+
+/* Süzülme Animasyonu Kodları */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Neon Buton */
+.neon-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    color: #00b4d8; /* Daha koyu ve keskin turkuaz */
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #00b4d8;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+    background: #00b4d8;
+    color: #05070f;
+    box-shadow: 0 0 25px rgba(0, 180, 216, 0.7);
+}
+
+/* Yenilenen Teknolojik Yetenekler */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills-list li {
+    background: rgba(0, 242, 254, 0.05);
+    color: #00f2fe;
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+    background: rgba(157, 78, 221, 0.1);
+    color: #9d4edd;
+    border-color: #9d4edd;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
+}
+
+/* İletişim Linki */
+.email-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #9d4edd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: #00b4d8;
+    text-shadow: 0 0 8px rgba(0, 180, 216, 0.5);
+}
+
+/* Deneyim */
+.exp-item h3 {
+    color: #00b4d8;
+}
+
+.exp-item .date {
+    color: #9d4edd;
+    font-size: 14px;
+    font-weight: 600;
+}
