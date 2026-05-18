@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <div class="cursor-glow"></div>
 
     <div class="bg-glow"></div>
 
@@ -27,9 +29,12 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="neon-text">Merhaba, Ben <span>Nursemin Yıldırım</span></h1>
-            <p>Bilgisayar Mühendisiyim | Yapay Zeka & Yazılım Geliştirici</p>
+            
+            <p>Ben bir <span id="typewriter"></span></p> 
+            
             <a href="#contact" class="neon-btn">Bana Ulaşın</a>
         </div>
+        
         <div class="hero-image">
             <img src="Nursemin(1).jpeg" alt="Nursemin Yıldırım">
         </div>
@@ -69,9 +74,35 @@
     <section id="contact" class="card">
         <h2>İletişim</h2>
         <p>Projeleriniz veya iş birlikleriniz için bana her zaman ulaşabilirsiniz.</p>
-        <a href="mailto:nurseminyildirim58@gmail.com" class="email-link">nurseminyildirim58@gmail.com</a>
+        
+        <form id="portfolio-form" novalidate>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+                <span class="error-msg" id="name-error"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" placeholder="E-posta Adresiniz" required>
+                <span class="error-msg" id="email-error"></span>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="message" rows="5" placeholder="Mesajınız" required></textarea>
+                <span class="error-msg" id="message-error"></span>
+            </div>
+            
+            <button type="submit" class="neon-btn" style="background:transparent; cursor:pointer; width:100%;">Mesajı Gönder</button>
+        </form>
+
+        <div id="success-box" class="success-message" style="display: none;">
+            <h3>Sinyal Gönderildi! 🚀</h3>
+            <p>Mesajınız başarıyla iletildi. En kısa sürede geri dönüş yapacağım.</p>
+        </div>
     </section>
 
+    <button id="scrollToTopBtn" title="Yukarı Çık">▲</button>
+
     <script src="script.js"></script>
+
 </body>
 </html>
