@@ -146,6 +146,7 @@ section h2::after {
 .hero h1 span {
     background: linear-gradient(90deg, #00b4d8 0%, #9d4edd 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
