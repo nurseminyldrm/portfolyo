@@ -175,3 +175,21 @@ scrollToTopBtn.addEventListener("click", () => {
         behavior: "smooth" // Yumuşak kayma hareketi sağladım.
     });
 });
+
+
+
+// Mobil Hamburger Menü Kodları
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+// Hamburger ikonuna tıklandığında menüyü aç/kapat yapıyoruz.
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Menüdeki herhangi bir linke tıklandığında menüyü otomatik kapat
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});

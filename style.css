@@ -362,3 +362,79 @@ section h2::after {
     opacity: 1;
     pointer-events: auto;
 }
+
+
+
+/* Hamburger İkonu Stili (Masaüstünde gizli olacak ama mobilde (768px altı) görünecek) */
+/* Temel Masaüstü Navbar Düzeni */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo solda, menü sağda kalır */
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+    background-color: #05070f;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Hamburger İkonu Masaüstü Ayarı */
+.hamburger {
+    display: none; /* Bilgisayarda gizle */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #00b4d8;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- MOBİL AYARLAR (768px altı ekranlar) --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Mobilde görünür yap */
+    }
+
+    .nav-links {
+        position: fixed; /* absolute yerine fixed yaparak tüm ekranı kaplamasını sağlıyoruz */
+        top: 0;
+        right: -100%; /* Başlangıçta sağda gizli */
+        flex-direction: column;
+        justify-content: center; /* Linkleri dikeyde ortala */
+        align-items: center;
+        background-color: rgba(5, 7, 15, 0.95); /* Arka planı hafif şeffaf siberpunk siyahı yap */
+        width: 70%; /* Ekranın %70'ini kaplasın */
+        height: 100vh; /* Tüm boyu kaplasın */
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(157, 78, 221, 0.3);
+        border-left: 2px solid #9d4edd;
+    }
+
+    /* Menü açıldığında devreye girecek sınıf */
+    .nav-links.active {
+        right: 0; 
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    /* Hero alanının mobilde alt alta düzgünce sıralanması */
+    .hero {
+        flex-direction: column-reverse; /* Önce fotoğraf sonra yazı gelebilir veya tam tersi */
+        text-align: center;
+        padding: 100px 20px 40px 20px;
+        gap: 20px;
+    }
+}
